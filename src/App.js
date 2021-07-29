@@ -7,7 +7,18 @@ function App() {
   return (
   <div className="todo">
     <div className="todo_sidebar">
-      <List/>
+      <List
+        items={[
+          {
+            icon: null,
+            name: 'все задачи'
+          },
+          {
+            icon: null,
+            name: 'все задачи'
+          }
+      ]}
+      />
     
       </div>
   </div>
