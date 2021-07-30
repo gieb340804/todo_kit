@@ -32,7 +32,7 @@ body {
   &_sidebar{
     background-color: #f4f6f8;
     width: 200px;
-    height: 100%;
+    height: calc(100% - 120px);
     padding: 60px 20px;
   }
   
