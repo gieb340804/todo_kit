@@ -1,5 +1,22 @@
+.cnopcka{
+  opacity: 0.6;
+  &:hover{
+    color: red;
+    opacity: 1;
+    
+  }
+}
 .list{
     margin-bottom: 40px;
+
+    &_icon-plus{
+      path{
+        stroke: rgb(126, 126, 126);
+        &:hover{
+          color: red;
+        }
+      }
+    }
     li{
       padding-top: 10px;
       padding-bottom: 10px;

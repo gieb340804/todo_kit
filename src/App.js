@@ -22,6 +22,7 @@ function App() {
       <List
         items={[
           {
+            index: 1,
             color: 'red',
             name: 'обслуживание касс'
             
@@ -32,13 +33,29 @@ function App() {
           },
           {
             color: 'blue',
-            name: 'выбивание долгов'
+            name: 'выбивание долгов',
+            active: true
           },
           {
             color: 'pink',
             name: 'поддержка'
           }
         ]}
+        isRemovable
+      />
+      <List
+        items={[
+          {
+            icon: (<svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="list_icon-plus">
+            <path d="M8 1V15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M1 8H15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>),
+            name: 'добавить задачу',
+            title: 'cnopcka'
+            
+          }
+        ]}
+        isRemovable
       />
       </div>
   </div>
