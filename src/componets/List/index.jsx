@@ -3,10 +3,9 @@ import classNames from 'classnames';
 
 import './List.scss'
 
-const List = ({ items, isRemovable }) =>{
-    console.log(items, isRemovable);
+const List = ({ items, isRemovable, onClick}) =>{
     return(
-        <ul className="list">
+        <ul onClick={onClick} className="list">
             {items.map((item, index)=> (
             <li key={index} className={classNames({active: item.active})}>
              <i>{item.icon ? (item.icon) : (<i className={`badge badge--${item.color}`}></i>)}
