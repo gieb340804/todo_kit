@@ -1,7 +1,7 @@
 import React from "react";
-
 import List from './componets/List/index';
-import AddListButtor from './componets/AddList/index';
+import AddList from './componets/AddList/index';
+import DB from "./assets/db.json";
 
 
 
@@ -49,7 +49,9 @@ function App() {
         ]}
         isRemovable
       />
-      <AddListButtor/>
+      <AddList
+     colors={DB.colors}
+      />
       </div>
   </div>
   );

@@ -37,3 +37,19 @@ body {
   }
   
 }
+
+.button{
+
+color: white;
+border: 0px;
+padding: 10px 20px;
+background: #4DD599;
+border-radius: 4px;
+cursor: pointer;
+  &:hover{
+    background: darken( #4DD599, 10%);
+  }
+  &:active{
+    background: darken( #4DD599, 20%);
+  }
+}

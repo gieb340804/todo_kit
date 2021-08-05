@@ -3,7 +3,7 @@ import List from '../List/index';
 
 import './AddListButtom.scss';
 
-const AddListButtor = () => {
+const AddList = ({colors}) => {
   const [visiblePopup, setvisiblePopup] = useState(false);
 
   return(
@@ -25,11 +25,18 @@ const AddListButtor = () => {
       />
       {visiblePopup && (<div className="add-list_popup">
         <input className="field" type="text" placeholder="название задания"/>
-        <h1>123</h1>
+          <div className="add-list_popup-colors">
+            
+            {colors.map(color => (
+           
+            <i key={color.id} className={`badge badge--${color.name}`}></i>))}
+          </div>
+        <button className="button">Добавить</button>
       </div>)}
       </div>
   );
 };
 
 
-export default AddListButtor;
+export default AddList;
+
