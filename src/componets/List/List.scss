@@ -39,11 +39,9 @@
   }
   .badge{
       display: inline-block;
-      width: 17px;
-      height: 17px;
+      width: 10px;
+      height: 10px;
       border-radius: 100%;
-
-      cursor: pointer;
       
       &--red{
         background-color: red;
