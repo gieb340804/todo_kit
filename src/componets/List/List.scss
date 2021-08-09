@@ -15,6 +15,7 @@
         &:hover{
           color: red;
         }
+        
       }
     }
     li{
@@ -25,6 +26,10 @@
       align-items: center;
       cursor: pointer;
       margin-bottom: 8px;
+
+      &:hover{
+        background: rgba(255, 255, 255, 0.72);
+      }
 
     &.active{
       background: #FFFFFF;
@@ -37,22 +42,4 @@
       display: inline-flex;
     }
   }
-  .badge{
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 100%;
-      
-      &--red{
-        background-color: red;
-      }
-      &--green{
-        background-color: green;
-      }
-      &--blue{
-        background-color: blue;
-      }
-      &--pink{
-        background-color: pink;
-      }
-  }
+  
