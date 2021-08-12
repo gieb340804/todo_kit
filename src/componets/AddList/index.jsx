@@ -10,6 +10,12 @@ const AddList = ({colors, onAdd}) => {
   const [seletedColor, selectColor] = useState(colors[0].id);
   const [inputValue, setinputValue] =  useState('');
 
+  const onClose = () => {
+    setvisiblePopup(false);
+    setinputValue('');
+    selectColor(colors[0].id);
+  }
+
 
   const addList = () => {
     if (!inputValue){
@@ -18,6 +24,7 @@ const AddList = ({colors, onAdd}) => {
     }else{
       const color = colors.filter(c => c.id === seletedColor)[0].name;
       onAdd( {id: Math.random(),name: inputValue,color: color});
+      onClose();
     }
   }
 
@@ -38,10 +45,10 @@ const AddList = ({colors, onAdd}) => {
             
           }
         ]}
-        isRemovable
+        
       />
       {visiblePopup && (<div className="add-list_popup">
-        <img onClick={() => setvisiblePopup(false)} className="add-list_popup-close-bth" src={close} alt='закрыть' /> 
+        <img onClick={onClose} className="add-list_popup-close-bth" src={close} alt='закрыть' /> 
         <input 
         value={inputValue}
         onChange={e => setinputValue(e.target.value)} 
