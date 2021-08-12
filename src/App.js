@@ -8,7 +8,7 @@ import DB from "./assets/db.json";
 
 
 function App() {
-
+  
   const [lists , setLists] = useState(
     DB.lists.map(item => {      
     item.color = DB.colors.filter(color => color.id === item.colorId)[0].name;
@@ -22,11 +22,13 @@ function App() {
     console.log(newList)
   }
 
+  
 
   return (
+    
   <div className="todo">
     <div className="todo_sidebar">
-
+       
 
       <List
         items={[
@@ -42,6 +44,9 @@ function App() {
       <List
         items={lists}
         isRemovable
+        onRemove={(lll) => {
+          console.log(lll);
+        }}
       />
 
     
@@ -50,8 +55,12 @@ function App() {
       
       />
       </div>
-      <div className="todo__task"></div>
+      <div className="todo__task">
+      <h2>Андрюша продакшон</h2>
+      </div>
   </div>
+
+  
   );
 }
 

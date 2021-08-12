@@ -17,6 +17,7 @@ body {
 
 
 .todo {
+  display: flex;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -35,7 +36,10 @@ body {
     height: calc(100% - 120px);
     padding: 60px 20px;
   }
-  
+  &__task{
+    flex: 1;
+    padding: 60px;
+  }
 }
 
 .button{
