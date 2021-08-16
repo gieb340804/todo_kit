@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import List from './componets/List/index';
 import AddList from './componets/AddList/index';
+import Tasks from './componets/Tasks/index'
 
 import DB from "./assets/db.json";
 
@@ -56,7 +57,7 @@ function App() {
       />
       </div>
       <div className="todo__task">
-      <h2>Андрюша продакшон</h2>
+      <Tasks/>
       </div>
   </div>
 
