@@ -1,14 +1,23 @@
-import React , { useState } from 'react';
+import React , { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import List from '../List/index';
 import Badge from '../Badge';
 import close from '../../assets/img/close.svg';
 
 import './AddListButtom.scss';
 
+
 const AddList = ({colors, onAdd}) => {
   const [visiblePopup, setvisiblePopup] = useState(false);
-  const [seletedColor, selectColor] = useState(colors[0].id);
+  const [seletedColor, selectColor] = useState(3);
   const [inputValue, setinputValue] =  useState('');
+
+  useEffect(() => {
+    if (Array.isArray(colors)){
+      selectColor(colors[0].id)
+    }
+  }, [colors])
 
   const onClose = () => {
     setvisiblePopup(false);
@@ -21,11 +30,19 @@ const AddList = ({colors, onAdd}) => {
     if (!inputValue){
       alert('Введи название дебил!')
       return;
-    }else{
-      const color = colors.filter(c => c.id === seletedColor)[0].name;
-      onAdd( {id: Math.random(),name: inputValue,color: color});
-      onClose();
     }
+      //const color = colors.filter(c => c.id === seletedColor)[0].name;
+      
+      axios
+      .post('http://192.168.77.88:3001/lists', {name: inputValue, colorId: seletedColor})
+      .then(({data}) => {
+        console.log(data);
+      });
+
+      
+      //onAdd( );
+      onClose();
+    
   }
 
   console.log(seletedColor);
