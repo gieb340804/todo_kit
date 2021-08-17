@@ -10,7 +10,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://192.168.77.88:3001/lists?_expand=color').then(({data}) => {
+    axios.get('http://192.168.77.88:3001/lists?_expand=color&_embed=tasks').then(({data}) => {
       setLists(data);
     });
     axios.get('http://192.168.77.88:3001/colors').then(({data}) => {
@@ -42,6 +42,7 @@ function App() {
           }
       ]}
       />
+    
       {lists ? (<List
         items={lists}
         isRemovable
@@ -60,7 +61,8 @@ function App() {
       <AddList onAdd={onAddList} colors={colors}/>
       </div>
       <div className="todo__task">
-      <Tasks/>
+      {lists &&<Tasks List={lists[1]} />}
+      
       </div>
   </div>
 
