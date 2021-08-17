@@ -11,6 +11,7 @@ import './AddListButtom.scss';
 const AddList = ({colors, onAdd}) => {
   const [visiblePopup, setvisiblePopup] = useState(false);
   const [seletedColor, selectColor] = useState(3);
+  const [isLoading, selectIsLoading] = useState(false);
   const [inputValue, setinputValue] =  useState('');
 
   useEffect(() => {
@@ -32,15 +33,18 @@ const AddList = ({colors, onAdd}) => {
       return;
     }
       
-      
+    selectIsLoading(true)
       axios
       .post('http://192.168.77.88:3001/lists', {name: inputValue, colorId: seletedColor})
       .then(({data}) => {
         const color = colors.filter(c => c.id === seletedColor)[0].name;
         const listObj = {...data, color: {name: color}};
         onAdd(listObj);
-      });
-      onClose();
+        onClose();
+      })
+      .finally(() => {
+        selectIsLoading(false);
+      })
     
   }
 
@@ -87,7 +91,9 @@ const AddList = ({colors, onAdd}) => {
            
             <i key={color.id} className={`badge badge--${color.name}`}></i>))}*/}
           </div>
-        <button onClick={addList} className="button">Добавить</button>
+        <button onClick={addList} className="button">
+          {isLoading ? 'Добавление...' : 'Добавить'}
+        </button>
       </div>)}
       </div>
   );

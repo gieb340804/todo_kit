@@ -45,8 +45,10 @@ function App() {
       {lists ? (<List
         items={lists}
         isRemovable
-        onRemove={(lll) => {
-          console.log(lll);
+        onRemove={(id) => {
+          const newLists = lists.filter(item => item.id !== id);
+          setLists(newLists);
+          console.log(newLists, lists);
         }}
       />): (
         'Загрузка...'
