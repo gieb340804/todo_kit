@@ -31,16 +31,15 @@ const AddList = ({colors, onAdd}) => {
       alert('Введи название дебил!')
       return;
     }
-      //const color = colors.filter(c => c.id === seletedColor)[0].name;
+      
       
       axios
       .post('http://192.168.77.88:3001/lists', {name: inputValue, colorId: seletedColor})
       .then(({data}) => {
-        console.log(data);
+        const color = colors.filter(c => c.id === seletedColor)[0].name;
+        const listObj = {...data, color: {name: color}};
+        onAdd(listObj);
       });
-
-      
-      //onAdd( );
       onClose();
     
   }

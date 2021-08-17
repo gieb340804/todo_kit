@@ -17,10 +17,11 @@ const removeList = (item) => {
         <ul onClick={onClick} className="list">
             {items.map((item, index)=> (
             <li key={index} 
-            className={classNames({active: item.active})}>
-             <i>{item.icon ? (item.icon) : (<Badge color={item.color}/>)}
+            className={classNames(item.className, {active: item.active})}>
+
+             <i>{item.icon ? (item.icon) : (<Badge color={item.color.name}/>)}
             </i>
-            <span className={item.title}>{item.name}</span>
+            <span>{item.name}</span>
             {isRemovable && (
             <img className="list_remove-icon" 
             src={removeSvg} 

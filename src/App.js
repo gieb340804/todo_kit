@@ -4,17 +4,13 @@ import axios from "axios";
 import { AddList , List, Tasks} from './componets';
 
 
-
-
-
-
 function App() {
   const [lists , setLists] = useState(null);
   const [colors, setColors] = useState(null);
 
 
   useEffect(() => {
-    axios.get('http://192.168.77.88:3001/lists?expand=color').then(({data}) => {
+    axios.get('http://192.168.77.88:3001/lists?_expand=color').then(({data}) => {
       setLists(data);
     });
     axios.get('http://192.168.77.88:3001/colors').then(({data}) => {
@@ -25,7 +21,6 @@ function App() {
   const onAddList = (obj) => {
     const newList = [...lists, obj];
     setLists(newList);
-    console.log(newList)
   }
 
   

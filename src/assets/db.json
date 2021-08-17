@@ -3,29 +3,67 @@
     {
       "id": 1,
       "name": "Продажи",
-      "colorId": 5,
-      "lalaId": 1
+      "colorId": 5
     },
     {
       "id": 2,
       "name": "Фронтенд",
-      "colorId": 4,
-      "lalaId": 2
+      "colorId": 4
     },
     {
-      "id": 0.15153131133096776,
-      "name": "asd",
-      "color": "blue"
-    },
-    {
-      "name": "фывфы",
+      "name": "asdas",
       "colorId": 4,
       "id": 3
     },
     {
-      "name": "привет короче",
-      "colorId": 1,
+      "name": "asdas",
+      "colorId": 4,
       "id": 4
+    },
+    {
+      "name": "56756",
+      "colorId": 4,
+      "id": 5
+    },
+    {
+      "name": "444",
+      "colorId": 1,
+      "id": 6
+    },
+    {
+      "name": "as",
+      "colorId": 1,
+      "id": 7
+    },
+    {
+      "name": "ff",
+      "colorId": 4,
+      "id": 8
+    },
+    {
+      "name": "asdas",
+      "colorId": 4,
+      "id": 9
+    },
+    {
+      "name": "asda",
+      "colorId": 7,
+      "id": 10
+    },
+    {
+      "name": "asd",
+      "colorId": 1,
+      "id": 11
+    },
+    {
+      "name": "ну короче пошли пить пиво",
+      "colorId": 3,
+      "id": 12
+    },
+    {
+      "name": "кассы на обслуживание",
+      "colorId": 6,
+      "id": 13
     }
   ],
   "tasks": [
